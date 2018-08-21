@@ -1,4 +1,4 @@
-# memory-game
+# Memory-Game
 An awesome memory game written in HTML, CSS & JavaScript. This is a complete browser-based card matching game that allows users to play an interesting memory game popularly know as Concentration. Have fun!
 
 # How The Game Works
