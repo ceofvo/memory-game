@@ -58,8 +58,9 @@ myReset();
 
 // If the cards do not match, remove the cards from the list and hide the card's symbol
 function removeClass(){
-	viewedCards[0].classList.remove("show" , "open" , "vibrate");
-	viewedCards[1].classList.remove("show" , "open" ,  "vibrate");
+	for(const testview of viewedCards){
+		testview.classList.remove("show" , "open" , "vibrate" , "disable");
+	}
 	viewedCards = [];
 }
 
@@ -81,14 +82,15 @@ function tryMatchCard(){
 		for (const viewedCard of viewedCards) {
 		viewedCard.classList.add("vibrate");
 	    }
-		setTimeout(removeClass, 400);
+		setTimeout(removeClass, 1000);
 	}
 }
  
 // Display the clicked card's symbol 
 function showCards(clickedIcon){
 	clickedIcon.classList.toggle("open");
-	clickedIcon.classList.toggle("show"); 
+	clickedIcon.classList.toggle("show");
+    clickedIcon.classList.toggle("disable");
 }
 
 function addCards(clickedIcon){
@@ -116,8 +118,8 @@ function updateMoves(){
 
 // Set up the event listener for a card click
 cardDeck.addEventListener('click', function (evt) {
-	    clickedIcon = evt.target;
-	if (clickedIcon.className === 'card') {
+	  	clickedIcon = evt.target;
+if (clickedIcon.className === 'card') {
 		showCards(clickedIcon);
 		addCards(clickedIcon);
 	}
