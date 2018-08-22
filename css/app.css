@@ -75,6 +75,10 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.disable {
+	pointer-events: none;
+}
+
 .deck .card.vibrate {
 	background: #F40000;
 	animation: shake 0.5s;
