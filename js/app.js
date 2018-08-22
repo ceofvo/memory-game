@@ -82,7 +82,7 @@ function tryMatchCard(){
 		for (const viewedCard of viewedCards) {
 		viewedCard.classList.add("vibrate");
 	    }
-		setTimeout(removeClass, 1000);
+		setTimeout(removeClass, 500);
 	}
 }
  
